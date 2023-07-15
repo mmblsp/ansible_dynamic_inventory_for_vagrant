@@ -1,0 +1,12 @@
+---
+- name: Test dynamic inventory
+  hosts: all
+
+  tasks:
+    - name: list all mashine
+      debug:
+        msg: "{{ item }}"
+      with_inventory_hostnames:
+      - all
+      run_once: true
+
